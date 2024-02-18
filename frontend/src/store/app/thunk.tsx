@@ -17,6 +17,7 @@ export const getSignedUrl = createAsyncThunk<
       appState: { imageInfo },
     } = getState() as GlobalAppState;
     // get signed url
+    console.log("API_BASE_URL", API_BASE_URL);
     const signedUrlResult = await axios.get<Record<string, any>>(
       `${API_BASE_URL}${GET_UPLOAD_SIGNED_URL}?fileName=${imageInfo.fileName}&contentType=${imageInfo.fileType}`
     );
