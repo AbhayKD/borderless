@@ -8,6 +8,7 @@ import cors from 'cors';
 import routes from './routes';
 
 const numCPUs = cpus().length;
+const allowedOrigins = ['https://borderless-frontend-app-8c6f4c2dc529.herokuapp.com', 'http://localhost:8080']
 
 export default function main() {
     if (cluster.isPrimary) {
@@ -34,6 +35,19 @@ export default function main() {
         };
 
         app.use(cors(corsOptions));
+        app.use(cors({
+            origin: (origin, callback) => {
+              // allow requests with no origin (like mobile apps or curl requests)
+              if (!origin) return callback(null, true);
+              
+              if (allowedOrigins.indexOf(origin) === -1) {
+                var msg = 'The CORS policy for this site does not ' +
+                          'allow access from the specified Origin.';
+                return callback(new Error(msg), false);
+              }
+              return callback(null, true);
+            }
+        }));
 
         app.use(express.json());
         app.use(router); // tell the app this is the router we are using
