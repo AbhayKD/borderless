@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - API_BASE_URL=http://backend:3000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+        context: ./backend
+        dockerfile: ./Dockerfile
+    command: npm start
+    volumes:
+        - .:/usr/app/
+        - ./backend/credentials.json:/app/credentials.json
+    ports:
+        - 3000:3000
+    environment:
+        - NODE_ENV=production
+        - BUCKET_NAME=gs://borderless-app
+        - SERVICE_NAME=Borderless APIs
+        - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+
+networks:
+  app-network:
+    driver: bridge
