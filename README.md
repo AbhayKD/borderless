@@ -91,3 +91,5 @@ To run the frontend locally, run the following commands:
     }
 }
 ```
+
+![Alt text](image.png)
