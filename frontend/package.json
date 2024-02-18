@@ -1,7 +1,10 @@
 {
   "name": "borderless-takehome-frontend",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Borderless App",
+  "main": "src/App.tsx",
+  "author": "Abhay Dekate",
+  "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.9.9",
     "@material-ui/icons": "^4.9.1",
@@ -21,6 +24,9 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^5.1.0",
     "styled-components": "^6.1.8"
+  },
+  "engines": {
+    "node": "21.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,6 +52,6 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.7",
     "@types/testing-library__react": "^10.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^4.9.5"
   }
 }
