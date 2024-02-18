@@ -92,4 +92,7 @@ To run the frontend locally, run the following commands:
 }
 ```
 
+### Backend Deployment URL - https://borderless-backend-app-749cb84ac082.herokuapp.com/
+
 ![Alt text](image.png)
+
