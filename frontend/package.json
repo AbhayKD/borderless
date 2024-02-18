@@ -5,6 +5,7 @@
   "main": "src/App.tsx",
   "author": "Abhay Dekate",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "@material-ui/core": "^4.9.9",
     "@material-ui/icons": "^4.9.1",
@@ -49,9 +50,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@testing-library/react": "^12.1.5",
     "@types/react-redux": "^7.1.7",
     "@types/testing-library__react": "^10.2.0",
+    "babel-jest": "^29.7.0",
     "typescript": "^4.9.5"
   }
 }
