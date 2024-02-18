@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import thunk from "redux-thunk";
 import { AppState } from "./app/type";
 import appReducer from "./app/slice";
+import { thunk } from "redux-thunk";
 
 export interface GlobalAppState {
   appState: AppState;
